@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biracell — Importados de Qualidade</title>
+  <meta name="description" content="Biracell — loja de importados com eletrônicos, eletrodomésticos, vestuário, utensílios e muito mais. Parceria com instalação de ar condicionado e montagem de veículos elétricos.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Biracell">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Biracell — Importados de Qualidade">
+  <meta property="og:description" content="Loja de importados com eletrônicos, eletrodomésticos, vestuário e muito mais. Venha conhecer o melhor do mundo na sua cidade!">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Biracell — Importados de Qualidade">
+  <meta name="twitter:description" content="Loja de importados com eletrônicos, eletrodomésticos, vestuário e muito mais.">
+  <meta name="twitter:image" content="images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --preto:     #0A0A0A;
+      --preto-2:   #141414;
+      --preto-3:   #1E1E1E;
+      --dourado:   #C9A84C;
+      --dourado-2: #E8C97A;
+      --dourado-3: #A07830;
+      --branco:    #FFFFFF;
+      --cinza:     #F5F5F5;
+      --cinza-2:   #E8E8E8;
+      --texto:     #1A1A1A;
+      --texto-leve:#666666;
+      --sombra:    0 8px 32px rgba(0,0,0,0.12);
+      --radius:    12px;
+      --ff-titulo: 'Cormorant Garamond', serif;
+      --ff-corpo:  'Nunito', sans-serif;
+      --header-h:  80px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-corpo);
+      color: var(--texto);
+      background: var(--branco);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ── TIPOGRAFIA ── */
+    h1, h2, h3 { font-family: var(--ff-titulo); line-height: 1.2; }
+
+    .section-tag {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 14px;
+      background: transparent;
+      color: var(--dourado);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: var(--ff-corpo);
+      position: relative;
+      padding: 0 20px;
+    }
+    .section-tag::before,
+    .section-tag::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 32px;
+      height: 1px;
+      background: var(--dourado);
+    }
+    .section-tag::before { right: 100%; transform: translateX(12px); }
+    .section-tag::after  { left:  100%; transform: translateX(-12px); }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      text-align: center;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      text-align: center;
+      color: var(--texto-leve);
+      max-width: 600px;
+      margin: 0 auto 64px;
+      font-size: 1.05rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section { padding: 100px 0; }
+
+    /* ── BARRA DE PROGRESSO ── */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--dourado-3), var(--dourado-2));
+      z-index: 2000;
+      transition: width 0.08s linear;
+    }
+
+    /* ── BOTÕES ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 36px;
+      border-radius: 0;
+      font-weight: 700;
+      font-size: 0.88rem;
+      font-family: var(--ff-corpo);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--dourado); outline-offset: 3px; }
+
+    .btn-gold {
+      background: var(--dourado);
+      color: var(--preto);
+      border-color: var(--dourado);
+    }
+    .btn-gold:hover {
+      background: var(--dourado-2);
+      border-color: var(--dourado-2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,168,76,0.35);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--dourado);
+      border-color: var(--dourado);
+    }
+    .btn-outline-gold:hover {
+      background: var(--dourado);
+      color: var(--preto);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--branco);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--branco);
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--preto);
+      color: var(--branco);
+      border-color: var(--preto);
+    }
+    .btn-dark:hover {
+      background: var(--preto-3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    /* ── HEADER ── */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--header-h);
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      transition: border-color 0.3s;
+    }
+    #header.scrolled { border-bottom-color: rgba(201,168,76,0.35); }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    /* LOGO TEXTO */
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .logo-text .brand {
+      font-family: var(--ff-titulo);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--branco);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .logo-text .brand span { color: var(--dourado); }
+    .logo-text .tagline {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-top: 2px;
+    }
+
+    /* NAV */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.80);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--dourado); }
+    .nav-cta {
+      background: var(--dourado) !important;
+      color: var(--preto) !important;
+      font-weight: 800 !important;
+      padding: 8px 20px !important;
+    }
+    .nav-cta:hover { background: var(--dourado-2) !important; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--branco);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* NAV MOBILE */
+    #navMenu {
+      position: fixed;
+      top: var(--header-h); left: 0; right: 0;
+      background: rgba(10,10,10,0.98);
+      z-index: 999;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    #navMenu.open { max-height: 420px; }
+    #navMenu ul { list-style: none; padding: 1.25rem 1.5rem 2rem; }
+    #navMenu ul li a {
+      display: block;
+      padding: 0.9rem 0;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s;
+    }
+    #navMenu ul li:last-child a { border-bottom: none; }
+    #navMenu ul li a:hover { color: var(--dourado); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      padding-top: var(--header-h);
+      background:
+        linear-gradient(160deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.75) 50%, rgba(20,14,0,0.88) 100%),
+        url('images/bg-hero.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-deco {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,168,76,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--dourado);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--dourado);
+    }
+
+    .hero-text h1 {
+      font-size: clamp(3.2rem, 6vw, 5.5rem);
+      color: var(--branco);
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      line-height: 1.05;
+    }
+    .hero-text h1 em {
+      font-style: normal;
+      color: var(--dourado);
+    }
+
+    .hero-text h2 {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(255,255,255,0.72);
+      font-weight: 400;
+      font-family: var(--ff-corpo);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .hero-slogan {
+      font-family: var(--ff-titulo);
+      font-size: 1.1rem;
+      color: var(--dourado);
+      font-style: italic;
+      margin-bottom: 40px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 32px;
+    }
+    .hero-stat {
+      flex: 1;
+      padding: 0 24px 0 0;
+      border-right: 1px solid rgba(255,255,255,0.10);
+    }
+    .hero-stat:last-child { border-right: none; padding-right: 0; padding-left: 24px; }
+    .hero-stat:first-child { padding-left: 0; }
+    .hero-stat strong {
+      display: block;
+      font-family: var(--ff-titulo);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--dourado);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .hero-stat span { font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 600; letter-spacing: 0.5px; }
+
+    /* HERO VISUAL */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .hero-card-main {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 2px;
+      padding: 52px 40px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      position: relative;
+    }
+    .hero-card-main::before {
+      content: '';
+      position: absolute;
+      top: 8px; left: 8px; right: 8px; bottom: 8px;
+      border: 1px solid rgba(201,168,76,0.10);
+      pointer-events: none;
+    }
+
+    .hero-brand-display {
+      font-family: var(--ff-titulo);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--branco);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .hero-brand-display span { color: var(--dourado); }
+
+    .hero-brand-sub {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 28px;
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--dourado);
+      margin: 0 auto 24px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .hero-tag {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--dourado-2);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero-corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-color: var(--dourado);
+      border-style: solid;
+    }
+    .hero-corner.tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .hero-corner.tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+    .hero-corner.bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+    .hero-corner.br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+    /* ── MARQUEE ── */
+    .marquee-strip {
+      background: var(--dourado);
+      padding: 0.85rem 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0 2rem;
+      color: var(--preto);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .marquee-sep { opacity: 0.4; font-size: 0.5rem; }
+
+    /* ── SOBRE ── */
+    #sobre {
+      background:
+        linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+        url('images/bg-sobre.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .sobre-visual {
+      position: relative;
+    }
+
+    .sobre-box {
+      background: var(--preto);
+      padding: 56px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sobre-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(201,168,76,0.15), transparent 60%);
+    }
+    .sobre-box-inner { position: relative; z-index: 1; text-align: center; }
+
+    .sobre-icon {
+      font-size: 2.5rem;
+      color: var(--dourado);
+      margin-bottom: 20px;
+    }
+
+    .sobre-box-inner .brand-lg {
+      font-family: var(--ff-titulo);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--branco);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .sobre-box-inner .brand-lg span { color: var(--dourado); }
+    .sobre-box-inner .brand-sub {
+      font-size: 0.68rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 28px;
+    }
+    .sobre-box-inner p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    .sobre-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 90px;
+      height: 90px;
+      background: var(--dourado);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .sobre-badge strong { font-family: var(--ff-titulo); font-size: 2rem; font-weight: 700; color: var(--preto); line-height: 1; }
+    .sobre-badge span   { font-size: 0.65rem; font-weight: 700; color: var(--preto); letter-spacing: 1px; text-transform: uppercase; }
+
+    .sobre-text .section-tag { margin: 0 0 14px; }
+    .sobre-text .section-title { text-align: left; color: var(--preto); margin-bottom: 28px; }
+
+    .sobre-text p {
+      color: var(--texto-leve);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .sobre-text p strong { color: var(--preto); }
+
+    .sobre-versículo {
+      border-left: 3px solid var(--dourado);
+      padding: 14px 20px;
+      background: rgba(201,168,76,0.06);
+      margin: 28px 0;
+      font-style: italic;
+      font-family: var(--ff-titulo);
+      font-size: 1.05rem;
+      color: var(--preto-3);
+    }
+
+    /* ── MVV ── */
+    #valores {
+      background: var(--preto);
+    }
+    #valores .section-tag  { color: var(--dourado); }
+    #valores .section-tag::before,
+    #valores .section-tag::after { background: var(--dourado); }
+    #valores .section-title { color: var(--branco); }
+    #valores .section-desc  { color: rgba(255,255,255,0.55); }
+
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .mvv-card {
+      background: var(--preto-2);
+      padding: 48px 36px;
+      border: 1px solid rgba(201,168,76,0.08);
+      transition: border-color 0.3s, background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .mvv-card::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -70%;
+      width: 40%; height: 200%;
+      background: linear-gradient(to right, rgba(201,168,76,0), rgba(201,168,76,0.06), rgba(201,168,76,0));
+      transform: skewX(-20deg);
+      transition: left 0.6s ease;
+    }
+    .mvv-card:hover { background: var(--preto-3); border-color: rgba(201,168,76,0.3); }
+    .mvv-card:hover::after { left: 130%; }
+
+    .mvv-num {
+      font-family: var(--ff-titulo);
+      font-size: 4rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.12);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .mvv-icon-wrap {
+      width: 52px;
+      height: 52px;
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--dourado);
+      margin-bottom: 20px;
+    }
+    .mvv-card h3 {
+      font-family: var(--ff-titulo);
+      font-size: 1.4rem;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+    .mvv-card p {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.93rem;
+      line-height: 1.78;
+    }
+
+    /* ── PRODUTOS ── */
+    #produtos {
+      background:
+        linear-gradient(rgba(245,245,245,0.94), rgba(245,245,245,0.94)),
+        url('images/bg-produtos.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .produto-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-2);
+      padding: 40px 24px 32px;
+      text-align: center;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .produto-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--dourado);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .produto-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+    .produto-card:hover::before { transform: scaleX(1); }
+
+    .produto-icon {
+      font-size: 2.4rem;
+      color: var(--dourado);
+      margin-bottom: 18px;
+    }
+    .produto-card h3 {
+      font-family: var(--ff-titulo);
+      font-size: 1.3rem;
+      color: var(--preto);
+      margin-bottom: 10px;
+    }
+    .produto-card p {
+      color: var(--texto-leve);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .produtos-cta {
+      text-align: center;
+      background: var(--preto);
+      padding: 56px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .produtos-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at right, rgba(201,168,76,0.12), transparent 60%);
+    }
+    .produtos-cta > * { position: relative; z-index: 1; }
+    .produtos-cta h3 {
+      font-family: var(--ff-titulo);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--branco);
+      margin-bottom: 8px;
+    }
+    .produtos-cta p { color: rgba(255,255,255,0.65); font-size: 0.97rem; max-width: 420px; }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      background:
+        linear-gradient(rgba(10,10,10,0.88), rgba(10,10,10,0.88)),
+        url('images/bg-servicos.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
+    #servicos .section-tag  { color: var(--dourado); }
+    #servicos .section-tag::before,
+    #servicos .section-tag::after { background: var(--dourado); }
+    #servicos .section-title { color: var(--branco); }
+    #servicos .section-desc  { color: rgba(255,255,255,0.58); }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .servico-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.10);
+      padding: 44px 32px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .servico-card:hover {
+      background: rgba(201,168,76,0.06);
+      border-color: rgba(201,168,76,0.3);
+    }
+
+    .servico-num {
+      font-family: var(--ff-titulo);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.18);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .servico-icon {
+      font-size: 1.8rem;
+      color: var(--dourado);
+      margin-bottom: 18px;
+    }
+    .servico-card h3 {
+      font-family: var(--ff-titulo);
+      font-size: 1.35rem;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+    .servico-card p {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* ── DESTAQUE / PLANO ── */
+    #destaque {
+      background: var(--dourado);
+      padding: 80px 0;
+    }
+
+    .destaque-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .destaque-text h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--preto);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .destaque-text p {
+      color: rgba(10,10,10,0.72);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .destaque-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .destaque-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--preto);
+    }
+    .destaque-item i {
+      width: 32px;
+      height: 32px;
+      background: var(--preto);
+      color: var(--dourado);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .destaque-card {
+      background: var(--preto);
+      padding: 52px 40px;
+      position: relative;
+    }
+    .destaque-card::before {
+      content: '';
+      position: absolute;
+      top: 12px; left: 12px; right: 12px; bottom: 12px;
+      border: 1px solid rgba(201,168,76,0.15);
+      pointer-events: none;
+    }
+    .destaque-card h3 {
+      font-family: var(--ff-titulo);
+      font-size: 1.6rem;
+      color: var(--branco);
+      margin-bottom: 20px;
+    }
+    .destaque-card ul {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .destaque-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.75);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+    .destaque-card ul li:last-child { border-bottom: none; }
+    .destaque-card ul li i { color: var(--dourado); margin-top: 3px; flex-shrink: 0; }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      background: var(--cinza);
+    }
+
+    .depo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .depo-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-2);
+      padding: 36px 28px;
+      position: relative;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .depo-card:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+
+    .depo-stars {
+      color: var(--dourado);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+    .depo-text {
+      font-style: italic;
+      color: var(--texto-leve);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-family: var(--ff-titulo);
+      font-size: 1.1rem;
+    }
+    .depo-autor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .depo-avatar {
+      width: 44px;
+      height: 44px;
+      background: var(--dourado);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-titulo);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--preto);
+      flex-shrink: 0;
+    }
+    .depo-info strong {
+      display: block;
+      color: var(--preto);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+    .depo-info span {
+      font-size: 0.8rem;
+      color: var(--texto-leve);
+    }
+    .depo-quote {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-family: var(--ff-titulo);
+      font-size: 4rem;
+      color: rgba(201,168,76,0.12);
+      line-height: 1;
+      font-style: italic;
+    }
+
+    .depo-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+    .depo-cta p {
+      color: var(--texto-leve);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    /* ── CONTATO ── */
+    #contato {
+      background:
+        linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+        url('images/bg-contato.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contato-info h3 {
+      font-family: var(--ff-titulo);
+      font-size: 2rem;
+      color: var(--preto);
+      margin-bottom: 32px;
+    }
+
+    .contato-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contato-item-icon {
+      width: 46px;
+      height: 46px;
+      min-width: 46px;
+      background: var(--preto);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--dourado);
+      flex-shrink: 0;
+    }
+    .contato-item-text strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--dourado-3);
+      margin-bottom: 4px;
+    }
+    .contato-item-text p,
+    .contato-item-text a {
+      color: var(--texto);
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
+    .contato-item-text a:hover { color: var(--dourado-3); }
+
+    .horarios-box {
+      background: var(--preto);
+      padding: 28px 28px 22px;
+      margin-top: 28px;
+    }
+    .horarios-box h4 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .horario-linha {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .horario-linha:last-child { border-bottom: none; }
+    .horario-linha strong { color: var(--branco); }
+
+    .redes-sociais {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--branco);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .social-btn:hover { transform: translateY(-3px); opacity: 0.85; }
+    .social-btn.instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-btn.whatsapp  { background: #25d366; }
+
+    /* FORM */
+    .contato-form-box {
+      background: var(--preto);
+      padding: 48px 40px;
+    }
+    .contato-form-box h3 {
+      font-family: var(--ff-titulo);
+      font-size: 1.8rem;
+      color: var(--branco);
+      margin-bottom: 8px;
+    }
+    .contato-form-box p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      color: var(--branco);
+      font-family: var(--ff-corpo);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--dourado); }
+    .form-group textarea { min-height: 110px; resize: vertical; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-form  { width: 100%; justify-content: center; margin-top: 8px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--preto-2);
+      color: rgba(255,255,255,0.55);
+      padding: 64px 0 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+    }
+
+    .footer-brand .brand-text {
+      font-family: var(--ff-titulo);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--branco);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .footer-brand .brand-text span { color: var(--dourado); }
+    .footer-brand .brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 20px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      max-width: 300px;
+      margin-bottom: 24px;
+    }
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--dourado);
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--ff-corpo);
+      color: var(--branco);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.88rem;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-col ul li a:hover { color: var(--dourado); }
+    .footer-col ul li a i { font-size: 0.65rem; color: var(--dourado); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .footer-bottom p { font-size: 0.8rem; }
+
+    /* ── WHATSAPP FLUTUANTE ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 990;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--branco);
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.07);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.55);
+    }
+
+    /* ── SCROLL TOP ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      z-index: 990;
+      width: 44px;
+      height: 44px;
+      background: var(--dourado);
+      color: var(--preto);
+      border-radius: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+      transition: transform 0.2s;
+    }
+    .scroll-top:hover { transform: translateY(-3px); }
+    .scroll-top.visible { display: flex; }
+
+    /* ── ANIMAÇÕES ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+
+    .fade-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    .fade-scale {
+      opacity: 0;
+      transform: scale(0.88);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-scale.visible { opacity: 1; transform: scale(1); }
+
+    /* ── RESPONSIVIDADE ── */
+    @media (min-width: 1800px) { .container { max-width: 1500px; } }
+
+    @media (max-width: 1280px) {
+      .hero-inner  { gap: 48px; }
+      .sobre-grid  { gap: 48px; }
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 1024px) {
+      #hero, #sobre, #produtos, #servicos, #contato {
+        background-attachment: scroll, scroll;
+      }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-btns  { justify-content: center; }
+      .hero-visual { order: -1; }
+      .hero-card-main { padding: 40px 32px; }
+
+      .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+      .sobre-visual { max-width: 420px; margin: 0 auto; }
+      .sobre-text .section-tag { margin: 0 auto 14px; }
+      .sobre-text .section-title { text-align: center; }
+      .sobre-text p { text-align: center; }
+      .sobre-versículo { text-align: center; border-left: none; border-top: 2px solid var(--dourado); }
+      .sobre-text .btn { display: block; width: fit-content; margin: 0 auto; }
+
+      .mvv-grid      { grid-template-columns: 1fr; gap: 2px; }
+      .servicos-grid { grid-template-columns: 1fr; gap: 2px; }
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .destaque-inner { grid-template-columns: 1fr; gap: 40px; }
+      .depo-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      .contato-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+
+      .produtos-cta { flex-direction: column; text-align: center; }
+      .produtos-cta p { max-width: 100%; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+
+      .hero-stat { padding: 0 16px 0 0; }
+      .hero-stat:last-child { padding-left: 16px; }
+      .hero-stat strong { font-size: 1.8rem; }
+
+      .mvv-grid { gap: 2px; }
+      .servicos-grid { gap: 2px; }
+      .produtos-grid { grid-template-columns: 1fr 1fr; }
+      .depo-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .contato-form-box { padding: 36px 28px; }
+    }
+
+    @media (max-width: 599px) {
+      section { padding: 64px 0; }
+      .container { padding: 0 1.25rem; }
+
+      .hero-stats { flex-direction: column; gap: 20px; border-top: none; padding-top: 28px; }
+      .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 0 18px 0 !important; text-align: center; }
+      .hero-stat:last-child { border-bottom: none; padding-bottom: 0 !important; }
+
+      .hero-card-main { padding: 32px 24px; }
+      .hero-brand-display { font-size: 2.5rem; }
+
+      .produtos-grid { grid-template-columns: 1fr; }
+      .produtos-cta { padding: 40px 24px; }
+
+      .destaque-card { padding: 36px 24px; }
+    }
+
+    @media (max-width: 480px) {
+      section { padding: 56px 0; }
+      .container { padding: 0 1rem; }
+
+      .hero-btns { flex-direction: column; align-items: stretch; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+
+      .logo-text .brand { font-size: 1.6rem; }
+      .logo-text .tagline { font-size: 0.55rem; }
+
+      .contato-form-box { padding: 28px 20px; }
+
+      .whatsapp-float { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.4rem; }
+      .scroll-top { bottom: 20px; left: 20px; }
+    }
+
+    @media (max-width: 360px) {
+      .container { padding: 0 0.875rem; }
+      section { padding: 48px 0; }
+
+      .logo-text .brand { font-size: 1.4rem; letter-spacing: 2px; }
+      .sobre-box { padding: 40px 28px; }
+      .mvv-card  { padding: 36px 24px; }
+      .servico-card { padding: 32px 20px; }
+      .depo-card { padding: 28px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up, .fade-left, .fade-right, .fade-scale { transition: none; opacity: 1; transform: none; }
+      .marquee-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progresso -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ══════ HEADER ══════ -->
+  <header id="header" role="banner">
+    <div class="container header-inner">
+      <a href="#hero" aria-label="Biracell — página inicial">
+        <div class="logo-text">
+          <span class="brand">Bira<span>cell</span></span>
+          <span class="tagline">Importados</span>
+        </div>
+      </a>
+
+      <nav role="navigation" aria-label="Menu principal">
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#destaque">Planos</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li>
+            <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="nav-cta">
+              <i class="fa-brands fa-whatsapp"></i> Peça já
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAV MOBILE -->
+  <nav id="navMenu" aria-label="Menu mobile" role="navigation">
+    <ul>
+      <li><a href="#sobre" class="nav-mob-link">Sobre</a></li>
+      <li><a href="#produtos" class="nav-mob-link">Produtos</a></li>
+      <li><a href="#servicos" class="nav-mob-link">Serviços</a></li>
+      <li><a href="#destaque" class="nav-mob-link">Planos</a></li>
+      <li><a href="#depoimentos" class="nav-mob-link">Avaliações</a></li>
+      <li><a href="#contato" class="nav-mob-link">Contato</a></li>
+      <li>
+        <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="nav-mob-link">
+          <i class="fa-brands fa-whatsapp"></i> Falar pelo WhatsApp
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ══════ HERO ══════ -->
+  <section id="hero" aria-label="Apresentação">
+    <div class="hero-deco" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span>Qualidade</span> importada <span>para você</span>
+        </div>
+        <h1>Bira<em>cell</em></h1>
+        <h2>Conectamos você ao melhor do mundo — eletrônicos, eletrodomésticos, vestuário e utensílios importados com atendimento personalizado e condições que cabem no seu bolso.</h2>
+        <p class="hero-slogan">"Deus abençoe sempre"</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+            <i class="fa-brands fa-whatsapp"></i> Fale conosco
+          </a>
+          <a href="#produtos" class="btn btn-outline-white">
+            Ver produtos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong class="counter" data-target="4" data-start="0" data-suffix="+">4+</strong>
+            <span>Categorias</span>
+          </div>
+          <div class="hero-stat">
+            <strong class="counter" data-target="3" data-start="0" data-suffix="">3</strong>
+            <span>Serviços parceiros</span>
+          </div>
+          <div class="hero-stat">
+            <strong>100%</strong>
+            <span>Fé e dedicação</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-main">
+            <div class="hero-corner tl"></div>
+            <div class="hero-corner tr"></div>
+            <div class="hero-corner bl"></div>
+            <div class="hero-corner br"></div>
+            <div class="hero-brand-display">Bira<span>cell</span></div>
+            <div class="hero-brand-sub">Importados de qualidade</div>
+            <div class="hero-divider"></div>
+            <div class="hero-tags">
+              <span class="hero-tag">Eletrônicos</span>
+              <span class="hero-tag">Eletrodomésticos</span>
+              <span class="hero-tag">Vestuário</span>
+              <span class="hero-tag">Utensílios</span>
+              <span class="hero-tag">Serviços</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Eletrônicos <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Eletrodomésticos <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Vestuário importado <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Utensílios <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Instalação de ar-condicionado <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Motos elétricas <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Patinetes elétricos <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Qualidade garantida <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Eletrônicos <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Eletrodomésticos <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Vestuário importado <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Utensílios <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Instalação de ar-condicionado <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Motos elétricas <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Patinetes elétricos <span class="marquee-sep">✦</span></span>
+      <span class="marquee-item">Qualidade garantida <span class="marquee-sep">✦</span></span>
+    </div>
+  </div>
+
+  <!-- ══════ SOBRE ══════ -->
+  <section id="sobre" aria-labelledby="sobre-titulo">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-visual fade-left">
+          <div class="sobre-box">
+            <div class="sobre-box-inner">
+              <div class="sobre-icon"><i class="fa-solid fa-globe"></i></div>
+              <div class="brand-lg">Bira<span>cell</span></div>
+              <div class="brand-sub">Importados</div>
+              <p>"Surgiu debaixo de bênção e muito sofrimento, mas acreditando e nunca desistindo."</p>
+            </div>
+          </div>
+          <div class="sobre-badge">
+            <strong><i class="fa-solid fa-cross" style="font-size:1.5rem"></i></strong>
+            <span>com fé</span>
+          </div>
+        </div>
+
+        <div class="sobre-text fade-right">
+          <span class="section-tag">Nossa história</span>
+          <h2 id="sobre-titulo" class="section-title">Uma loja nascida da fé e da perseverança</h2>
+          <p>A <strong>Biracell</strong> nasceu de um sonho regado a muita fé, esforço e determinação. Em meio aos desafios, o propósito de levar produtos de qualidade ao alcance das pessoas nunca deixou de ser o motor que move cada dia de trabalho.</p>
+          <p>Acreditamos que o trabalho honesto, feito com integridade e amor, transforma vidas. Por isso, cada produto que escolhemos, cada serviço que oferecemos e cada cliente que atendemos carrega a essência do nosso compromisso: <strong>excelência com propósito.</strong></p>
+          <p>Aqui você encontra o melhor do mercado internacional — eletrônicos, eletrodomésticos, vestuário e utensílios — com o atendimento caloroso de quem trata cada cliente como família.</p>
+          <div class="sobre-versículo">
+            "Tudo posso naquele que me fortalece." — Filipenses 4:13
+          </div>
+          <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+            <i class="fa-brands fa-whatsapp"></i> Fale conosco
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ MISSÃO / VISÃO / VALORES ══════ -->
+  <section id="valores" aria-labelledby="valores-titulo">
+    <div class="container">
+      <span class="section-tag fade-up">Nossa essência</span>
+      <h2 id="valores-titulo" class="section-title fade-up" style="color:var(--branco)">Missão, visão e valores</h2>
+      <p class="section-desc fade-up">Os princípios que guiam cada decisão, cada produto escolhido e cada cliente atendido na Biracell.</p>
+
+      <div class="mvv-grid">
+        <div class="mvv-card fade-scale">
+          <div class="mvv-num">01</div>
+          <div class="mvv-icon-wrap"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Missão</h3>
+          <p>Proporcionar uma experiência de compra excepcional, conectando nossos clientes com o melhor do mundo, sempre com integridade e fé. Levar qualidade importada ao alcance de todos.</p>
+        </div>
+        <div class="mvv-card fade-scale">
+          <div class="mvv-num">02</div>
+          <div class="mvv-icon-wrap"><i class="fa-solid fa-eye"></i></div>
+          <h3>Visão</h3>
+          <p>Ser a principal referência em produtos importados da região, reconhecida pela qualidade, confiança e pelo ambiente de crescimento contínuo — para os clientes e para a equipe.</p>
+        </div>
+        <div class="mvv-card fade-scale">
+          <div class="mvv-num">03</div>
+          <div class="mvv-icon-wrap"><i class="fa-solid fa-gem"></i></div>
+          <h3>Valores</h3>
+          <p><strong style="color:var(--dourado)">Fé</strong> — acreditamos no que fazemos. <strong style="color:var(--dourado)">Excelência</strong> — entregamos o melhor. <strong style="color:var(--dourado)">Respeito</strong> — tratamos todos com dignidade. <strong style="color:var(--dourado)">Inovação</strong> — sempre buscamos o novo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ PRODUTOS ══════ -->
+  <section id="produtos" aria-labelledby="produtos-titulo">
+    <div class="container">
+      <span class="section-tag fade-up">O que oferecemos</span>
+      <h2 id="produtos-titulo" class="section-title fade-up">Produtos importados para o seu estilo de vida</h2>
+      <p class="section-desc fade-up">Selecionamos com cuidado cada produto para garantir qualidade, design e custo-benefício que você não encontra em qualquer lugar.</p>
+
+      <div class="produtos-grid">
+        <div class="produto-card fade-up">
+          <div class="produto-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>Eletrônicos</h3>
+          <p>Smartphones, tablets, fones de ouvido, smartwatches e acessórios tecnológicos das principais marcas importadas.</p>
+        </div>
+        <div class="produto-card fade-up">
+          <div class="produto-icon"><i class="fa-solid fa-blender"></i></div>
+          <h3>Eletrodomésticos</h3>
+          <p>Ventiladores, liquidificadores, fritadeiras, aspiradores e muito mais — produtos que facilitam o dia a dia da sua casa.</p>
+        </div>
+        <div class="produto-card fade-up">
+          <div class="produto-icon"><i class="fa-solid fa-shirt"></i></div>
+          <h3>Vestuário</h3>
+          <p>Roupas, calçados e acessórios importados com estilo, qualidade e acabamento que fazem a diferença no seu visual.</p>
+        </div>
+        <div class="produto-card fade-up">
+          <div class="produto-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+          <h3>Utensílios</h3>
+          <p>Ferramentas, organização doméstica, utilidades de cozinha e itens práticos para tornar sua rotina mais eficiente.</p>
+        </div>
+      </div>
+
+      <div class="produtos-cta fade-up">
+        <div>
+          <h3>Não achou o que procurava?</h3>
+          <p>Fale conosco pelo WhatsApp e consulte nossa disponibilidade de produtos. Trabalhamos para encontrar o que você precisa!</p>
+        </div>
+        <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
+          <i class="fa-brands fa-whatsapp"></i> Consultar produtos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ SERVIÇOS ══════ -->
+  <section id="servicos" aria-labelledby="servicos-titulo">
+    <div class="container">
+      <span class="section-tag fade-up">Além dos produtos</span>
+      <h2 id="servicos-titulo" class="section-title fade-up">Serviços especializados</h2>
+      <p class="section-desc fade-up">Contamos com parceiros especializados para garantir a instalação e montagem perfeita dos seus produtos.</p>
+
+      <div class="servicos-grid">
+        <div class="servico-card fade-up">
+          <div class="servico-num">01</div>
+          <div class="servico-icon"><i class="fa-solid fa-wind"></i></div>
+          <h3>Instalação de ar-condicionado</h3>
+          <p>Parceria com técnicos certificados para instalação profissional de ar-condicionado. Garantia de qualidade, segurança e eficiência no serviço.</p>
+        </div>
+        <div class="servico-card fade-up">
+          <div class="servico-num">02</div>
+          <div class="servico-icon"><i class="fa-solid fa-motorcycle"></i></div>
+          <h3>Montagem de motos elétricas</h3>
+          <p>Montagem especializada de motos elétricas importadas. Nossa equipe parceira garante a configuração correta e o funcionamento perfeito do seu veículo.</p>
+        </div>
+        <div class="servico-card fade-up">
+          <div class="servico-num">03</div>
+          <div class="servico-icon"><i class="fa-solid fa-person-biking"></i></div>
+          <h3>Montagem de patinetes elétricos</h3>
+          <p>Patinetes elétricos montados com atenção e precisão. Praticidade e mobilidade urbana com a segurança que você merece.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ DESTAQUE / PLANO ══════ -->
+  <section id="destaque" aria-labelledby="destaque-titulo">
+    <div class="container">
+      <div class="destaque-inner">
+        <div class="destaque-text fade-left">
+          <span class="section-tag" style="margin:0 0 14px;color:var(--preto)">Oferta especial</span>
+          <h2 id="destaque-titulo">Compre e já saia com tudo pronto!</h2>
+          <p>Na Biracell, você não compra apenas um produto — você leva uma experiência completa. Ao adquirir veículos elétricos ou equipamentos de climatização, nossos parceiros cuidam de tudo para você.</p>
+          <div class="destaque-items">
+            <div class="destaque-item">
+              <i class="fa-solid fa-check"></i>
+              Montagem especializada incluída na compra
+            </div>
+            <div class="destaque-item">
+              <i class="fa-solid fa-check"></i>
+              Técnicos parceiros certificados
+            </div>
+            <div class="destaque-item">
+              <i class="fa-solid fa-check"></i>
+              Atendimento rápido e eficiente
+            </div>
+            <div class="destaque-item">
+              <i class="fa-solid fa-check"></i>
+              Suporte pós-venda pelo WhatsApp
+            </div>
+          </div>
+        </div>
+
+        <div class="destaque-card fade-right">
+          <h3>O que está incluso</h3>
+          <ul>
+            <li><i class="fa-solid fa-star"></i> Compra de moto elétrica + montagem completa por técnicos parceiros</li>
+            <li><i class="fa-solid fa-star"></i> Compra de patinete elétrico + montagem e configuração</li>
+            <li><i class="fa-solid fa-star"></i> Compra de ar-condicionado + instalação profissional parceira</li>
+            <li><i class="fa-solid fa-star"></i> Suporte e orientação pós-compra via WhatsApp</li>
+          </ul>
+          <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width:100%;justify-content:center">
+            <i class="fa-brands fa-whatsapp"></i> Quero saber mais
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ DEPOIMENTOS ══════ -->
+  <section id="depoimentos" aria-labelledby="depo-titulo">
+    <div class="container">
+      <span class="section-tag fade-up">O que dizem</span>
+      <h2 id="depo-titulo" class="section-title fade-up">Avaliações dos nossos clientes</h2>
+      <p class="section-desc fade-up">A satisfação de quem compra conosco é o nosso maior prêmio. Veja o que nossos clientes falam!</p>
+
+      <div class="depo-grid">
+        <div class="depo-card fade-up">
+          <span class="depo-quote">"</span>
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-text">"Produto chegou exatamente como descrito, qualidade incrível! Atendimento excelente, super atencioso e rápido. Com certeza volto a comprar!"</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">M</div>
+            <div class="depo-info">
+              <strong>Maria S.</strong>
+              <span>Cliente satisfeita</span>
+            </div>
+          </div>
+        </div>
+        <div class="depo-card fade-up">
+          <span class="depo-quote">"</span>
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-text">"Comprei uma moto elétrica e a montagem foi perfeita! Os técnicos parceiros são muito profissionais. Recomendo a todos sem hesitar."</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">R</div>
+            <div class="depo-info">
+              <strong>Roberto A.</strong>
+              <span>Cliente satisfeito</span>
+            </div>
+          </div>
+        </div>
+        <div class="depo-card fade-up">
+          <span class="depo-quote">"</span>
+          <div class="depo-stars">★★★★★</div>
+          <p class="depo-text">"Loja diferenciada, produtos de qualidade e preços justos. O ar-condicionado foi instalado com todo o cuidado. Estou muito feliz com a compra!"</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">A</div>
+            <div class="depo-info">
+              <strong>Ana C.</strong>
+              <span>Cliente satisfeita</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-cta fade-up">
+        <p>Quer compartilhar sua experiência? Nos mande uma mensagem!</p>
+        <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+          <i class="fa-brands fa-whatsapp"></i> Deixar avaliação
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CONTATO ══════ -->
+  <section id="contato" aria-labelledby="contato-titulo">
+    <div class="container">
+      <span class="section-tag fade-up">Fale conosco</span>
+      <h2 id="contato-titulo" class="section-title fade-up">Entre em contato</h2>
+      <p class="section-desc fade-up">Tire suas dúvidas, faça seu pedido ou venha nos visitar. Estamos prontos para te atender!</p>
+
+      <div class="contato-grid">
+        <div class="fade-left">
+          <h3 class="contato-info" style="font-family:var(--ff-titulo);font-size:2rem;color:var(--preto);margin-bottom:32px">Informações de contato</h3>
+
+          <div class="contato-item">
+            <div class="contato-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="contato-item-text">
+              <strong>WhatsApp</strong>
+              <p><a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer">(44) 9 8830-5225</a></p>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-item-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contato-item-text">
+              <strong>E-mail</strong>
+              <p><a href="mailto:ubiranidantas15@gmail.com">ubiranidantas15@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contato-item">
+            <div class="contato-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contato-item-text">
+              <strong>Endereço</strong>
+              <p>Praça 7 de Setembro, 314</p>
+            </div>
+          </div>
+
+          <div class="horarios-box">
+            <h4><i class="fa-regular fa-clock"></i> Horário de atendimento</h4>
+            <div class="horario-linha">
+              <span>Segunda a sexta-feira</span>
+              <strong>8h às 18h</strong>
+            </div>
+            <div class="horario-linha">
+              <span>Sábado</span>
+              <strong>8h às 12h</strong>
+            </div>
+            <div class="horario-linha">
+              <span>Domingo</span>
+              <strong>Fechado</strong>
+            </div>
+          </div>
+
+          <div class="redes-sociais">
+            <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp" aria-label="WhatsApp da Biracell">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-btn instagram" aria-label="Instagram da Biracell">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contato-form-box fade-right">
+          <h3>Solicite um atendimento</h3>
+          <p>Preencha e entraremos em contato pelo WhatsApp.</p>
+
+          <form id="contatoForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(44) 9 0000-0000" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="interesse">Tenho interesse em</label>
+              <input type="text" id="interesse" name="interesse" placeholder="Ex: eletrônicos, moto elétrica, ar-condicionado...">
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Fale mais sobre o que você precisa..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-form">
+              <i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FOOTER ══════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-text">Bira<span>cell</span></div>
+          <div class="brand-sub">Importados de qualidade</div>
+          <div class="footer-divider"></div>
+          <p>Conectamos você ao melhor do mundo com produtos importados de qualidade, serviços especializados e um atendimento que faz a diferença.</p>
+          <div class="redes-sociais">
+            <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-btn instagram" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#sobre"><i class="fa-solid fa-chevron-right"></i> Sobre nós</a></li>
+            <li><a href="#produtos"><i class="fa-solid fa-chevron-right"></i> Produtos</a></li>
+            <li><a href="#servicos"><i class="fa-solid fa-chevron-right"></i> Serviços</a></li>
+            <li><a href="#destaque"><i class="fa-solid fa-chevron-right"></i> Planos</a></li>
+            <li><a href="#depoimentos"><i class="fa-solid fa-chevron-right"></i> Avaliações</a></li>
+            <li><a href="#contato"><i class="fa-solid fa-chevron-right"></i> Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> (44) 9 8830-5225
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ubiranidantas15@gmail.com">
+                <i class="fa-solid fa-envelope"></i> ubiranidantas15@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="#contato">
+                <i class="fa-solid fa-location-dot"></i> Praça 7 de Setembro, 314
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Biracell · CPF 317.371.418-09</p>
+        <p>Seg–Sex 8h–18h &nbsp;|&nbsp; Sáb 8h–12h</p>
+      </div>
+    </div>
+
+    <!-- Rodapé MonteSite -->
+    <div id="montesite-footer-badge"></div>
+    <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Scroll top -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // ── HAMBURGER ──
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navMenu   = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    navMenu.querySelectorAll('.nav-mob-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── SCROLL TOP + PROGRESS + HEADER ──
+    const scrollBtn   = document.getElementById('scrollTopBtn');
+    const progressBar = document.getElementById('scrollProgress');
+    const header      = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const total    = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (scrolled / total * 100) + '%';
+      scrollBtn.classList.toggle('visible', scrolled > 400);
+      header.classList.toggle('scrolled', scrolled > 60);
+    }, { passive: true });
+
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── ANIMAÇÕES ──
+    const animEls = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .fade-scale');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 90);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    animEls.forEach(el => observer.observe(el));
+
+    // ── CONTADOR ──
+    function animCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const start  = parseInt(el.dataset.start) || 0;
+      const suffix = el.dataset.suffix || '';
+      const dur    = 1400;
+      const step   = (target - start) / (dur / 16);
+      let cur      = start;
+      const tick   = () => {
+        cur += step;
+        if (cur >= target) { el.textContent = target + suffix; return; }
+        el.textContent = Math.round(cur) + suffix;
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { animCounter(e.target); counterObs.unobserve(e.target); } });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // ── FORM → WHATSAPP ──
+    document.getElementById('contatoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome      = document.getElementById('nome').value.trim();
+      const telefone  = document.getElementById('telefone').value.trim();
+      const interesse = document.getElementById('interesse').value.trim();
+      const mensagem  = document.getElementById('mensagem').value.trim();
+
+      if (!nome) { alert('Por favor, informe seu nome.'); return; }
+
+      let msg = `Olá, Biracell! 👋\n\nMeu nome é *${nome}* e gostaria de um atendimento.\n`;
+      if (telefone)  msg += `📞 Telefone: ${telefone}\n`;
+      if (interesse) msg += `🛒 Interesse: ${interesse}\n`;
+      if (mensagem)  msg += `\n💬 ${mensagem}`;
+
+      window.open(`https://wa.me/5544988305225?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  </script>
+</body>
+</html>
