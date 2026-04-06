@@ -1377,6 +1377,78 @@
     }
     .fade-scale.visible { opacity: 1; transform: scale(1); }
 
+    /* ── EFEITOS EXTRAS ── */
+
+    /* Float suave no card hero */
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-14px); }
+    }
+    .hero-card { animation: floatCard 5s ease-in-out infinite; }
+
+    /* Shimmer dourado varrendo o nome hero */
+    @keyframes shimmerSweep {
+      0%   { background-position: -250% center; }
+      100% { background-position:  250% center; }
+    }
+    .hero-brand-display {
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.92) 15%,
+        #C9A84C 35%,
+        #fff8dc 50%,
+        #C9A84C 65%,
+        rgba(255,255,255,0.92) 85%
+      );
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerSweep 3.5s linear infinite;
+    }
+
+    /* Stagger entrada nos cards de produto */
+    .produtos-grid .produto-card:nth-child(1) { transition-delay: 0.05s; }
+    .produtos-grid .produto-card:nth-child(2) { transition-delay: 0.18s; }
+    .produtos-grid .produto-card:nth-child(3) { transition-delay: 0.31s; }
+    .produtos-grid .produto-card:nth-child(4) { transition-delay: 0.44s; }
+
+    /* Stagger entrada nos cards de serviço */
+    .servicos-grid .servico-card:nth-child(1) { transition-delay: 0.05s; }
+    .servicos-grid .servico-card:nth-child(2) { transition-delay: 0.18s; }
+    .servicos-grid .servico-card:nth-child(3) { transition-delay: 0.31s; }
+
+    /* Bounce no ícone de serviço ao hover */
+    @keyframes iconBounce {
+      0%   { transform: scale(1) rotate(0deg); }
+      30%  { transform: scale(1.4) rotate(-10deg); }
+      60%  { transform: scale(0.88) rotate(5deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+    .servico-icon { display: inline-block; }
+    .servico-card:hover .servico-icon { animation: iconBounce 0.55s ease forwards; }
+
+    /* Pulse glow no botão WhatsApp */
+    @keyframes wpPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50%       { box-shadow: 0 4px 40px rgba(37,211,102,0.75), 0 0 0 10px rgba(37,211,102,0.08); }
+    }
+    .whatsapp-float { animation: wpPulse 2.2s ease-in-out infinite; }
+
+    /* Brilho dourado ao hover nos MVV cards */
+    @keyframes goldGlow {
+      0%, 100% { box-shadow: inset 0 0 0 1px rgba(201,168,76,0.15); }
+      50%       { box-shadow: inset 0 0 20px rgba(201,168,76,0.12), 0 0 24px rgba(201,168,76,0.15); }
+    }
+    .mvv-card:hover { animation: goldGlow 1.8s ease-in-out infinite; }
+
+    /* Canvas de partículas no hero */
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* ── RESPONSIVIDADE ── */
     @media (min-width: 1800px) { .container { max-width: 1500px; } }
 
@@ -1487,7 +1559,12 @@
 
     @media (prefers-reduced-motion: reduce) {
       .fade-up, .fade-left, .fade-right, .fade-scale { transition: none; opacity: 1; transform: none; }
-      .marquee-track { animation: none; }
+      .marquee-track, .hero-card, .whatsapp-float, .mvv-card { animation: none; }
+      .hero-brand-display {
+        background: none;
+        -webkit-text-fill-color: var(--branco);
+        animation: none;
+      }
     }
   </style>
 </head>
@@ -1547,6 +1624,7 @@
 
   <!-- ══════ HERO ══════ -->
   <section id="hero" aria-label="Apresentação">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-deco" aria-hidden="true"></div>
     <div class="container hero-inner">
       <div class="hero-text">
@@ -2101,6 +2179,92 @@
       entries.forEach(e => { if (e.isIntersecting) { animCounter(e.target); counterObs.unobserve(e.target); } });
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // ── PARTÍCULAS DOURADAS NO HERO ──
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+
+      function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      function createParticle() {
+        return {
+          x: rand(0, W),
+          y: rand(H * 0.2, H),
+          r: rand(1, 3.2),
+          alpha: rand(0.2, 0.65),
+          vx: rand(-0.3, 0.3),
+          vy: rand(-0.8, -0.2),
+          life: 0,
+          maxLife: rand(120, 260)
+        };
+      }
+
+      for (let i = 0; i < 55; i++) {
+        const p = createParticle();
+        p.life = rand(0, p.maxLife);
+        particles.push(p);
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach((p, i) => {
+          p.x  += p.vx;
+          p.y  += p.vy;
+          p.life++;
+          const progress = p.life / p.maxLife;
+          const a = p.alpha * (1 - Math.pow(progress * 2 - 1, 2));
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, a);
+          ctx.fillStyle = progress < 0.5 ? '#C9A84C' : '#fff5c0';
+          ctx.shadowColor = '#C9A84C';
+          ctx.shadowBlur  = 6;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+          if (p.life >= p.maxLife) particles[i] = createParticle();
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // ── TILT 3D NOS CARDS DE PRODUTO ──
+    document.querySelectorAll('.produto-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width  - 0.5;
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        card.style.transform = `perspective(700px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-5px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    // ── TYPEWRITER NO HERO SUBTITLE ──
+    const twEl = document.querySelector('#hero h2');
+    if (twEl) {
+      const twText = twEl.textContent;
+      twEl.textContent = '';
+      twEl.style.minHeight = '1em';
+      let ti = 0;
+      function typeChar() {
+        if (ti < twText.length) {
+          twEl.textContent += twText[ti++];
+          setTimeout(typeChar, ti < 20 ? 40 : 18);
+        }
+      }
+      setTimeout(typeChar, 900);
+    }
 
     // ── FORM → WHATSAPP ──
     document.getElementById('contatoForm').addEventListener('submit', function(e) {
