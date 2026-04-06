@@ -727,46 +727,93 @@
     }
 
     .produto-card {
-      background: var(--branco);
-      border: 1px solid var(--cinza-2);
-      padding: 40px 24px 32px;
+      background: var(--preto) center / cover no-repeat;
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 0;
       text-align: center;
-      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      transition: box-shadow 0.35s, transform 0.35s;
       position: relative;
       overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
+
+    /* overlay escuro degradê sobre a imagem */
     .produto-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.15) 0%,
+        rgba(10,10,10,0.72) 55%,
+        rgba(10,10,10,0.92) 100%
+      );
+      transition: background 0.35s;
+      z-index: 1;
+    }
+
+    /* linha dourada na base ao hover */
+    .produto-card::after {
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 3px;
       background: var(--dourado);
       transform: scaleX(0);
-      transition: transform 0.3s;
+      transform-origin: left;
+      transition: transform 0.35s;
+      z-index: 2;
     }
+
     .produto-card:hover {
-      border-color: rgba(201,168,76,0.3);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+      transform: translateY(-5px);
     }
-    .produto-card:hover::before { transform: scaleX(1); }
+    .produto-card:hover::before {
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.05) 0%,
+        rgba(10,10,10,0.55) 45%,
+        rgba(10,10,10,0.88) 100%
+      );
+    }
+    .produto-card:hover::after { transform: scaleX(1); }
+
+    /* conteúdo interno sobre o overlay */
+    .produto-card-body {
+      position: relative;
+      z-index: 2;
+      padding: 28px 24px 28px;
+    }
 
     .produto-icon {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       color: var(--dourado);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      display: block;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
     }
     .produto-card h3 {
       font-family: var(--ff-titulo);
-      font-size: 1.3rem;
-      color: var(--preto);
-      margin-bottom: 10px;
+      font-size: 1.45rem;
+      color: var(--branco);
+      margin-bottom: 8px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
     .produto-card p {
-      color: var(--texto-leve);
-      font-size: 0.88rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.86rem;
       line-height: 1.65;
     }
+
+    /* imagens individuais por card */
+    .card-eletronicos      { background-image: url('images/prod-eletronicos.jpg'); }
+    .card-eletrodomesticos { background-image: url('images/prod-eletrodomesticos.jpg'); }
+    .card-vestuario        { background-image: url('images/prod-vestuario.jpg'); }
+    .card-utensilios       { background-image: url('images/prod-utensilios.jpg'); }
 
     .produtos-cta {
       text-align: center;
@@ -1652,25 +1699,33 @@
       <p class="section-desc fade-up">Selecionamos com cuidado cada produto para garantir qualidade, design e custo-benefício que você não encontra em qualquer lugar.</p>
 
       <div class="produtos-grid">
-        <div class="produto-card fade-up">
-          <div class="produto-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-          <h3>Eletrônicos</h3>
-          <p>Smartphones, tablets, fones de ouvido, smartwatches e acessórios tecnológicos das principais marcas importadas.</p>
+        <div class="produto-card card-eletronicos fade-up">
+          <div class="produto-card-body">
+            <div class="produto-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3>Eletrônicos</h3>
+            <p>Smartphones, tablets, fones de ouvido, smartwatches e acessórios tecnológicos das principais marcas importadas.</p>
+          </div>
         </div>
-        <div class="produto-card fade-up">
-          <div class="produto-icon"><i class="fa-solid fa-blender"></i></div>
-          <h3>Eletrodomésticos</h3>
-          <p>Ventiladores, liquidificadores, fritadeiras, aspiradores e muito mais — produtos que facilitam o dia a dia da sua casa.</p>
+        <div class="produto-card card-eletrodomesticos fade-up">
+          <div class="produto-card-body">
+            <div class="produto-icon"><i class="fa-solid fa-blender"></i></div>
+            <h3>Eletrodomésticos</h3>
+            <p>Ventiladores, liquidificadores, fritadeiras, aspiradores e muito mais — produtos que facilitam o dia a dia da sua casa.</p>
+          </div>
         </div>
-        <div class="produto-card fade-up">
-          <div class="produto-icon"><i class="fa-solid fa-shirt"></i></div>
-          <h3>Vestuário</h3>
-          <p>Roupas, calçados e acessórios importados com estilo, qualidade e acabamento que fazem a diferença no seu visual.</p>
+        <div class="produto-card card-vestuario fade-up">
+          <div class="produto-card-body">
+            <div class="produto-icon"><i class="fa-solid fa-shirt"></i></div>
+            <h3>Vestuário</h3>
+            <p>Roupas, calçados e acessórios importados com estilo, qualidade e acabamento que fazem a diferença no seu visual.</p>
+          </div>
         </div>
-        <div class="produto-card fade-up">
-          <div class="produto-icon"><i class="fa-solid fa-kitchen-set"></i></div>
-          <h3>Utensílios</h3>
-          <p>Ferramentas, organização doméstica, utilidades de cozinha e itens práticos para tornar sua rotina mais eficiente.</p>
+        <div class="produto-card card-utensilios fade-up">
+          <div class="produto-card-body">
+            <div class="produto-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+            <h3>Utensílios</h3>
+            <p>Ferramentas, organização doméstica, utilidades de cozinha e itens práticos para tornar sua rotina mais eficiente.</p>
+          </div>
         </div>
       </div>
 
