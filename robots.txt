@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://biracell.com.br/sitemap.xml
+Sitemap: https://sbimportados.com.br/sitemap.xml
