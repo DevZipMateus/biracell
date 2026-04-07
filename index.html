@@ -216,28 +216,11 @@
       height: 100%;
     }
 
-    /* LOGO TEXTO */
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-    .logo-text .brand {
-      font-family: var(--ff-titulo);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--branco);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-    .logo-text .brand span { color: var(--dourado); }
-    .logo-text .tagline {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--dourado);
-      margin-top: 2px;
+    /* LOGO IMAGEM */
+    .logo-wrap img {
+      height: 56px;
+      width: auto;
+      display: block;
     }
 
     /* NAV */
@@ -1577,8 +1560,7 @@
       .hero-brand-sub  { letter-spacing: 3px; }
       .hero-slogan     { font-size: 0.97rem; }
 
-      .logo-text .brand   { font-size: 1.55rem; letter-spacing: 1.5px; }
-      .logo-text .tagline { font-size: 0.56rem; letter-spacing: 2px; }
+      .logo-wrap img { height: 48px; }
 
       .sobre-box-inner .brand-lg { font-size: 1.7rem; }
       .sobre-box { padding: 36px 22px; }
@@ -1601,8 +1583,7 @@
       section    { padding: 44px 0; }
       .container { padding: 0 0.875rem; }
 
-      .logo-text .brand   { font-size: 1.3rem; letter-spacing: 1px; }
-      .logo-text .tagline { font-size: 0.52rem; }
+      .logo-wrap img { height: 42px; }
 
       .hero-brand-display { font-size: 1.65rem; letter-spacing: 0.5px; }
       .hero-card-main     { padding: 28px 18px; }
@@ -1624,7 +1605,7 @@
     @media (max-width: 320px) {
       .container { padding: 0 0.75rem; }
       .hero-brand-display { font-size: 1.45rem; }
-      .logo-text .brand   { font-size: 1.15rem; }
+      .logo-wrap img { height: 38px; }
       .hero-btns .btn     { font-size: 0.85rem; padding: 0.65rem 1.2rem; }
     }
 
@@ -1654,11 +1635,8 @@
   <!-- ══════ HEADER ══════ -->
   <header id="header" role="banner">
     <div class="container header-inner">
-      <a href="#hero" aria-label="SB Importados — página inicial">
-        <div class="logo-text">
-          <span class="brand">SB Importados</span>
-          <span class="tagline">Importados</span>
-        </div>
+      <a href="#hero" class="logo-wrap" aria-label="SB Importados — página inicial">
+        <img src="images/logo.png" alt="SB Importados" loading="eager">
       </a>
 
       <nav role="navigation" aria-label="Menu principal">
@@ -2124,8 +2102,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div class="brand-text">SB Importados</div>
-          <div class="brand-sub">Importados de qualidade</div>
+          <img src="images/logo.png" alt="SB Importados" style="height:52px;width:auto;display:block;margin-bottom:12px;">
           <div class="footer-divider"></div>
           <p>Conectamos você ao melhor do mundo com produtos importados de qualidade, serviços especializados e um atendimento que faz a diferença.</p>
           <div class="redes-sociais">
