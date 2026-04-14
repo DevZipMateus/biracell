@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstração de Vitrine — SB Importados</title>
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --preto:     #0A0A0A;
+      --preto-2:   #141414;
+      --dourado:   #C9A84C;
+      --branco:    #FFFFFF;
+      --texto:     #1A1A1A;
+      --sombra:    0 8px 32px rgba(0,0,0,0.12);
+      --radius:    12px;
+      --ff-titulo: 'Cormorant Garamond', serif;
+      --ff-corpo:  'Nunito', sans-serif;
+      --header-h:  80px;
+    }
+
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; }
+
+    body {
+      font-family: var(--ff-corpo);
+      color: var(--texto);
+      background: var(--preto);
+      display: flex;
+      flex-direction: column;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── HEADER ── */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: var(--preto-2);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.10);
+      z-index: 2000;
+      flex-shrink: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      transition: opacity 0.3s;
+    }
+
+    .logo-wrap:hover { opacity: 0.75; }
+
+    .logo-wrap img {
+      height: 44px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-family: var(--ff-corpo);
+    }
+
+    .nav-links a:hover {
+      color: var(--branco);
+      background: rgba(201, 168, 76, 0.10);
+    }
+
+    .nav-cta {
+      background: var(--dourado) !important;
+      color: var(--preto) !important;
+      font-weight: 700;
+      padding: 10px 18px !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-cta:hover {
+      background: rgba(201, 168, 76, 0.85) !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--branco);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── IFRAME CONTAINER ── */
+    #vitrine-container {
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - var(--header-h) - 63px);
+      border: none;
+      display: block;
+    }
+
+    /* ── BADGE RODAPÉ ── */
+    #montesite-footer-badge {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 63px;
+      z-index: 1999;
+      background: var(--preto);
+      border-top: 1px solid rgba(201, 168, 76, 0.10);
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 768px) {
+      :root { --header-h: 64px; }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .logo-wrap img { height: 38px; }
+      .nav-cta { padding: 9px 14px !important; font-size: 0.80rem; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --header-h: 60px; }
+
+      .logo-wrap img { height: 34px; }
+      .nav-cta i { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER (Replicado do index.html) -->
+<header id="header" role="banner">
+  <div class="container header-inner">
+    <a href="index.html" class="logo-wrap" aria-label="SB Importados — voltar ao início">
+      <img src="images/logo.png" alt="SB Importados" loading="eager">
+    </a>
+
+    <nav role="navigation" aria-label="Menu principal">
+      <ul class="nav-links">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#servicos">Serviços</a></li>
+        <li><a href="vitrine.html" class="active">Vitrine</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+        <li>
+          <a href="https://wa.me/5544988305225" target="_blank" rel="noopener noreferrer" class="nav-cta">
+            <i class="fa-brands fa-whatsapp"></i> Peça já
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- IFRAME VITRINE -->
+<div id="vitrine-container">
+  <iframe src="https://biracell.egestor.com.br/vitrine/" title="Vitrine de produtos SB Importados"></iframe>
+</div>
+
+<!-- BADGE RODAPÉ -->
+<div id="montesite-footer-badge"></div>
+<script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+<script>
+  // Menu mobile
+  const hamburger = document.getElementById('hamburgerBtn');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open'));
+    });
+  }
+
+  // Ajustar altura do iframe dinamicamente
+  function adjustIframeHeight() {
+    const header = document.getElementById('header');
+    const badgeHeight = 63;
+    const headerHeight = header.offsetHeight;
+    const availableHeight = window.innerHeight - headerHeight - badgeHeight;
+
+    const iframe = document.querySelector('iframe');
+    if (iframe) {
+      iframe.style.height = availableHeight + 'px';
+    }
+  }
+
+  // Chamar ao carregar e ao redimensionar
+  window.addEventListener('load', adjustIframeHeight);
+  window.addEventListener('resize', adjustIframeHeight);
+  adjustIframeHeight();
+</script>
+
+</body>
+</html>

@@ -825,6 +825,75 @@
     }
     .produtos-cta p { color: rgba(255,255,255,0.65); font-size: 0.97rem; max-width: 420px; }
 
+    /* ── VITRINE ── */
+    .produtos-vitrine {
+      background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.02) 100%), rgba(20,20,20,0.5);
+      border: 2px solid rgba(201,168,76,0.20);
+      border-radius: 16px;
+      padding: 48px 40px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .produtos-vitrine::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 50%, rgba(201,168,76,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .vitrine-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .vitrine-content { flex: 1; min-width: 280px; }
+    .vitrine-icon {
+      font-size: 3.2rem;
+      color: var(--dourado);
+      margin-bottom: 16px;
+    }
+    .produtos-vitrine h3 {
+      font-family: var(--ff-titulo);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--branco);
+      margin-bottom: 10px;
+    }
+    .produtos-vitrine p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.97rem;
+      line-height: 1.68;
+      margin-bottom: 20px;
+    }
+    .vitrine-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 16px;
+      margin-bottom: 0;
+    }
+    .vitrine-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.90rem;
+      font-weight: 500;
+    }
+    .vitrine-features i {
+      color: var(--dourado);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .produtos-vitrine .btn {
+      white-space: nowrap;
+      min-width: max-content;
+    }
+
     /* ── SERVIÇOS ── */
     #servicos {
       background:
@@ -1504,6 +1573,9 @@
       .mvv-grid      { gap: 12px; }
       .servicos-grid { gap: 12px; }
       .produtos-grid { grid-template-columns: 1fr 1fr; }
+      .produtos-vitrine { padding: 40px 28px; }
+      .vitrine-inner { gap: 32px; }
+      .vitrine-features { grid-template-columns: 1fr; }
       .depo-grid     { grid-template-columns: 1fr; }
 
       .sobre-box-inner .brand-lg { font-size: 2.2rem; letter-spacing: 2px; }
@@ -1538,6 +1610,9 @@
 
       .produtos-grid     { grid-template-columns: 1fr; }
       .produto-card      { min-height: 260px; }
+      .produtos-vitrine  { padding: 36px 24px; }
+      .vitrine-inner     { flex-direction: column; gap: 24px; }
+      .vitrine-features  { grid-template-columns: 1fr; }
       .produtos-cta      { padding: 40px 24px; }
 
       .depo-grid         { grid-template-columns: 1fr; gap: 16px; }
@@ -1555,7 +1630,7 @@
       .container { padding: 0 1rem; }
 
       .hero-btns       { flex-direction: column; align-items: stretch; }
-      .hero-btns .btn  { width: 100%; justify-content: center; }
+      .hero-btns .btn  { width: 100%; justify-content: center; font-size: 0.80rem; padding: 12px 24px; }
       .hero-brand-display { font-size: 1.95rem; letter-spacing: 1px; }
       .hero-brand-sub  { letter-spacing: 3px; }
       .hero-slogan     { font-size: 0.97rem; }
@@ -1644,6 +1719,7 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#produtos">Produtos</a></li>
           <li><a href="#servicos">Serviços</a></li>
+          <li><a href="vitrine.html">Vitrine</a></li>
           <li><a href="#destaque">Planos</a></li>
           <li><a href="#depoimentos">Avaliações</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -1667,6 +1743,7 @@
       <li><a href="#sobre" class="nav-mob-link">Sobre</a></li>
       <li><a href="#produtos" class="nav-mob-link">Produtos</a></li>
       <li><a href="#servicos" class="nav-mob-link">Serviços</a></li>
+      <li><a href="vitrine.html" class="nav-mob-link">Vitrine</a></li>
       <li><a href="#destaque" class="nav-mob-link">Planos</a></li>
       <li><a href="#depoimentos" class="nav-mob-link">Avaliações</a></li>
       <li><a href="#contato" class="nav-mob-link">Contato</a></li>
@@ -1696,6 +1773,9 @@
           </a>
           <a href="#produtos" class="btn btn-outline-white">
             Ver produtos <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="vitrine.html" class="btn btn-outline-white">
+            <i class="fa-solid fa-store"></i> Vitrine online
           </a>
         </div>
         <div class="hero-stats">
@@ -1860,6 +1940,26 @@
             <h3>Utensílios</h3>
             <p>Ferramentas, organização doméstica, utilidades de cozinha e itens práticos para tornar sua rotina mais eficiente.</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Vitrine online -->
+      <div class="produtos-vitrine fade-up">
+        <div class="vitrine-inner">
+          <div class="vitrine-content">
+            <div class="vitrine-icon"><i class="fa-solid fa-shop"></i></div>
+            <h3>Explore nossa vitrine online</h3>
+            <p>Navegue por nosso catálogo completo com fotografia profissional e detalhes técnicos. Veja fotos ampliadas, especificações e tire suas dúvidas sobre cada produto antes de fazer seu pedido.</p>
+            <ul class="vitrine-features">
+              <li><i class="fa-solid fa-image"></i> Fotos em alta resolução</li>
+              <li><i class="fa-solid fa-info-circle"></i> Detalhes técnicos completos</li>
+              <li><i class="fa-solid fa-check-circle"></i> Disponibilidade em tempo real</li>
+              <li><i class="fa-solid fa-phone"></i> Suporte via WhatsApp</li>
+            </ul>
+          </div>
+          <a href="vitrine.html" class="btn btn-gold">
+            <i class="fa-solid fa-arrow-right"></i> Acessar vitrine
+          </a>
         </div>
       </div>
 
