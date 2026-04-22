@@ -2409,8 +2409,8 @@
     const twEl = document.querySelector('#hero h2');
     if (twEl) {
       const twText = twEl.textContent;
+      twEl.style.minHeight = twEl.offsetHeight + 'px'; // reserva espaço antes de esvaziar
       twEl.textContent = '';
-      twEl.style.minHeight = '1em';
       let ti = 0;
       function typeChar() {
         if (ti < twText.length) {
